@@ -1,0 +1,65 @@
+# app.py
+
+from colorama import Fore, Style, init
+
+init(autoreset=True)
+
+print(Fore.GREEN + "Hello! Python application is running inside Docker.")
+print(Style.BRIGHT + "Docker practical successful!")
+
+
+Create another file named requirements.txt
+colorama==0.4.6
+
+
+
+# Specify base image
+FROM python:3.12-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy requirements file
+COPY requirements.txt .
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application files
+COPY app.py .
+
+# Run Python application
+CMD ["python", "app.py"]
+
+
+
+docker build -t python-docker-app .
+
+docker run --name my-python-container python-docker-app
+
+# View Docker images
+docker images
+
+# View running containers
+docker ps
+
+# View all containers, including stopped ones
+docker ps -a
+
+
+
+
+# Check Docker installation
+docker --version
+
+# Build Docker image
+docker build -t python-docker-app .
+
+# Run Docker container
+docker run --name my-python-container python-docker-app
+
+# List images
+docker images
+
+# List all containers
+docker ps -a

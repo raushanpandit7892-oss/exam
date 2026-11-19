@@ -1,0 +1,67 @@
+
+# Configure username and email
+git config --global user.name "Your Name"
+git config --global user.email "your-email@example.com"
+
+# Initialize repository
+git init
+
+# Stage files
+git add .
+
+# Check status
+git status
+
+# Commit changes
+git commit -m "First commit"
+
+# Connect GitHub repository
+git remote add origin https://github.com/username/repository.git
+
+# Rename branch
+git branch -M main
+
+# Push to GitHub
+git push -u origin main
+
+
+
+
+# Create repository
+mkdir GitBranchDemo
+cd GitBranchDemo
+git init
+
+# Create initial file and commit
+echo "This is main branch" > main.py
+git add .
+git commit -m "Initial commit"
+
+# Create feature branch
+git branch feature
+
+# Switch to feature branch
+git switch feature
+
+# Make changes and commit
+echo "This is a new feature" > feature.py
+git add .
+git commit -m "Added feature file"
+
+# Switch to main branch
+git switch main
+
+# Make changes in main
+echo "Updated main branch" >> main.py
+git add .
+git commit -m "Updated main file"
+
+# Merge feature into main
+git merge feature
+
+# Check history
+git log --oneline --graph --all
+
+
+
+

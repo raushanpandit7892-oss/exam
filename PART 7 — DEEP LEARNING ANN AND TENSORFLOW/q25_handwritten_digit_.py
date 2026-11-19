@@ -2,9 +2,9 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Input, Dense, Flatten
-from tensorflow.keras.utils import to_categorical
+from keras.models import Sequential
+from keras.layers import Input, Dense, Flatten
+from keras.utils import to_categorical
 train_data = pd.read_csv('csv/Train.csv')
 print("Shape of train_data:", train_data.shape)
 X = train_data.iloc[:, 1:]  
